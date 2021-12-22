@@ -12,14 +12,14 @@ public class VulnController {
     Logger logger = LogManager.getLogger(VulnController.class);
 
     @GetMapping("/vuln")
-    public String index() {
+    public String vuln() {
         logger.info("${jndi:ldap://127.0.0.1:3030/}");
-        return "{'hello': 'world1'}";
+        return "{'hello': 'world from vuln'}";
     }
 
     @GetMapping("/vuln2")
-    public String test(@RequestParam("input") String input) {
+    public String vulnWithParam(@RequestParam("input") String input) {
         logger.info(input);
-        return "{'hello': 'world2'}";
+        return "{'hello': 'world from vuln with param'}";
     }
 }
